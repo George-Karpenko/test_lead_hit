@@ -4,6 +4,9 @@ jobs:
   gh-pages-deploy:
     name: Deploying to Github Pages
     runs-on: ubuntu-latest
+    environment:
+      name: deployment
+      url: ${{ steps.aws-sync.outputs.s3_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -15,6 +18,3 @@ jobs:
         run: git config user.name "<username>" && git config user.email "<email>"
       - name: Deploy
         run: npm run build
-    environment:
-      name: Preview
-      url: ${{ steps.step_name.outputs.url_output }}
