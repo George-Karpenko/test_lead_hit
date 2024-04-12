@@ -15,3 +15,5 @@ jobs:
         run: git config user.name "<username>" && git config user.email "<email>"
       - name: Deploy
         run: npm run build
+      - name: Run shell cmd
+        run: echo "https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}"
