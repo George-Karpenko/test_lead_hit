@@ -33,10 +33,9 @@ export default function initNewRouter(store) {
       },
     },
   ];
-
   const router = new VueRouter({
     mode: "history",
-    base: "/test_lead_hit/",
+    base: process.env.BASE_URL,
     routes,
   });
 
