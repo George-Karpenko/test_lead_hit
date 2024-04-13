@@ -2,9 +2,7 @@
 
 ## Project is deployed on github
 
-```
-https://george-karpenko.github.io/analytics
-```
+https://george-karpenko.github.io/
 
 ## Project setup
 
