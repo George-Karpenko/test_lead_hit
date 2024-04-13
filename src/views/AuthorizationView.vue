@@ -54,7 +54,7 @@ export default {
     return {
       form: {
         siteId: {
-          value: "5f8475902b0be670555f1bb3",
+          value: "",
           isFocus: null,
           errors: [],
         },
