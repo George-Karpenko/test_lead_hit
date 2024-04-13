@@ -21,7 +21,6 @@
               @focus="setFocusInputSiteId(true)"
               @blur="setFocusInputSiteId(false)"
               :state="state"
-              required
             ></b-form-input>
             <b-form-invalid-feedback v-if="form.siteId.errors">
               <ul>
@@ -56,7 +55,7 @@ export default {
         siteId: {
           value: "",
           isFocus: null,
-          errors: [],
+          errors: ["id сайта должен содержать 24 символа"],
         },
       },
     };
@@ -93,6 +92,7 @@ export default {
     ...mapActions("user", ["login"]),
     async onSubmit() {
       const errorSever = await this.login(this.form.siteId.value);
+      console.log(errorSever);
       if (errorSever) {
         this.form.siteId.errors.push(errorSever);
       } else {
